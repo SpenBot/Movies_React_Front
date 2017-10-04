@@ -14,32 +14,28 @@ import './App.css'
 
 class App extends Component {
 
-  constructor () {
-    super()
-    this.state = {
-      movies: []
-    }
-  }
 
-  componentDidMount () {
-    axios.get('http://localhost:4000/movies')
-      .then((res) => {
-        console.log(res)
-        this.setState({
-          movies: res.data
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
 
 
   render() {
+
     return (
-      <div>
-        <Movies movies={this.state.movies}/>
-      </div>
+      <Router>
+        <div>
+          <main>
+
+              <Switch>
+
+                <Route path="/movies" render={(props) => {
+                    return ( <Movies /> )
+                  }}
+                />
+
+              </Switch>
+
+            </main>
+        </div>
+      </Router>
     );
   }
 }
