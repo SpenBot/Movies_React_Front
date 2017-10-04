@@ -6,7 +6,7 @@ class Movies extends Component {
 
     return (
       <div>
-
+        {this.props.movies[0]}
       </div>
     );
   }
