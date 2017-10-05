@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 
+import { Link } from 'react-router-dom'
+
+
 class Movies extends Component {
 
   constructor () {
@@ -30,13 +33,13 @@ class Movies extends Component {
   render() {
     let moviesList = this.state.movies.map( (movie) => {
       return (
-        movie.title
+        // <a href={`/movies/${movie.title}`}> {movie.title} </a>
+        <Link to={`/movies/${movie.title}`}> {movie.title} </Link>
       )
     })
 
     return (
       <div>
-
 
         {moviesList}
 
