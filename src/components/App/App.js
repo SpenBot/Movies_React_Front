@@ -24,14 +24,23 @@ class App extends Component {
         <div>
           <main>
 
-              <Switch>
+            <Switch>
 
-                <Route path="/movies" render={(props) => {
-                    return ( <Movies /> )
-                  }}
-                />
 
-              </Switch>
+
+              <Route path="/movies" render={(props) => {
+                  return ( <Movies /> )
+                }}
+              />
+
+              <Route
+                path="/*" render={(props) => {
+                  return ( <Redirect to="/movies" /> )
+                }}
+              />
+
+
+            </Switch>
 
             </main>
         </div>
