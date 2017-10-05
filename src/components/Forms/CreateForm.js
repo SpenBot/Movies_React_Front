@@ -15,11 +15,14 @@ class CreateForm extends Component {
   }
 
   handleCreate(e) {
-    this.setState({title: e.target.title});
+    this.setState({title: e.target.title,
+                   year: e.target.year,
+                   director: e.target.director,
+                   photo_url: e.target.photo_url});
   }
 
   handleSubmit(e) {
-    alert('Movie was submitted: ' + this.state.);
+    alert('Movie was submitted: ' + this.state);
     e.preventDefault();
   }
 
@@ -47,3 +50,4 @@ class CreateForm extends Component {
     );
   }
 }
+export default CreateForm;
