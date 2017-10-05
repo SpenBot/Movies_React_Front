@@ -32,12 +32,14 @@ class Movies extends Component {
 
 
   render() {
+
     let moviesList = this.state.movies.map( (movie) => {
       return (
-        // <a href={`/movies/${movie.title}`}> {movie.title} </a>
+        //  {movie.title}
         <Link to={`/movies/${movie.title}`}> {movie.title} </Link>
       )
     })
+
 
     return (
       <div>

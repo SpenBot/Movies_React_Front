@@ -14,9 +14,6 @@ import UpdateForm from '../Forms/UpdateForm'
 
 import './App.css'
 
-import CreateForm from '../Forms/CreateForm'
-import UpdateForm from '../Forms/UpdateForm'
-
 
 class App extends Component {
 
