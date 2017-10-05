@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import axios from 'axios'
 import Movies from '../Movies/Movies.js'
+import Movie from '../Movie/Movie.js'
 
 import './App.css'
 
@@ -27,26 +28,30 @@ class App extends Component {
 
             <Switch>
 
-              <Route path="/movies" render={(props) => {
-                  return (
-                    <div>
-                      <Movies />
-                      {/* <CreateForm /> */}
-                    </div>
-                  )
-                }}
-              />
 
               <Route path="/movies/:title" render={(props) => {
                   return (
                     <div>
-                      {/* <Movie /> */}
+                      <Movie {...props}/>
                       {/* <EditForm />
                       <Delete /> */}
                     </div>
                   )
                 }}
               />
+
+
+              <Route exact path="/movies" render={(props) => {
+                  return (
+                    <div>
+                      <Movies {...props}/>
+                      {/* <CreateForm /> */}
+                    </div>
+                  )
+                }}
+              />
+
+
 
               <Route
                 path="/*" render={() => {

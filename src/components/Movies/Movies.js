@@ -29,12 +29,17 @@ class Movies extends Component {
 
   render() {
     let moviesList = this.state.movies.map( (movie) => {
-      return (movie.title)
+      return (
+        movie.title
+      )
     })
 
     return (
       <div>
+
+
         {moviesList}
+
       </div>
     );
   }
