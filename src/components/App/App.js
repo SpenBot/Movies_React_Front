@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom'
 import axios from 'axios'
 import Movies from '../Movies/Movies.js'
+import CreateForm from '../Forms/CreateForm'
+import UpdateForm from '../Forms/UpdateForm'
 
 import './App.css'
 
