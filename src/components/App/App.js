@@ -20,21 +20,36 @@ class App extends Component {
   render() {
 
     return (
+
       <Router>
         <div>
           <main>
 
             <Switch>
 
-
-
               <Route path="/movies" render={(props) => {
-                  return ( <Movies /> )
+                  return (
+                    <div>
+                      <Movies />
+                      {/* <CreateForm /> */}
+                    </div>
+                  )
+                }}
+              />
+
+              <Route path="/movies/:title" render={(props) => {
+                  return (
+                    <div>
+                      {/* <Movie /> */}
+                      {/* <EditForm />
+                      <Delete /> */}
+                    </div>
+                  )
                 }}
               />
 
               <Route
-                path="/*" render={(props) => {
+                path="/*" render={() => {
                   return ( <Redirect to="/movies" /> )
                 }}
               />
@@ -45,7 +60,8 @@ class App extends Component {
             </main>
         </div>
       </Router>
-    );
+
+    )
   }
 }
 
