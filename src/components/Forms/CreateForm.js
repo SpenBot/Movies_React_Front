@@ -22,7 +22,7 @@ class CreateForm extends Component {
   }
 
   handleSubmit(e) {
-    alert('Movie was submitted: ' + this.state);
+    alert('Movie was submitted: ');
     e.preventDefault();
   }
 
