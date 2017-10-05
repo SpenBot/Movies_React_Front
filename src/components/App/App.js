@@ -33,8 +33,8 @@ class App extends Component {
                   return (
                     <div>
                       <Movie {...props}/>
-                      {/* <EditForm />
-                      <Delete /> */}
+                      <EditForm />
+                      {/* <Delete /> */}
                     </div>
                   )
                 }}
@@ -45,7 +45,7 @@ class App extends Component {
                   return (
                     <div>
                       <Movies {...props}/>
-                      {/* <CreateForm /> */}
+                      <CreateForm />
                     </div>
                   )
                 }}
