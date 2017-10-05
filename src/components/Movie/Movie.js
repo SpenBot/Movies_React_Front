@@ -40,7 +40,7 @@ class Movie extends Component {
         <br/>
         {this.state.movie && this.state.movie.director}
         <br/>
-        <img src="${this.state.movie.photo_url}" height="300" width="260" />
+        {/* <img src= $"{this.state.movie.photo_url}", height="300" width="260" /> */}
               <br/>
               <br/>
               <br/>

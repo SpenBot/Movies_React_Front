@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 class UpdateForm extends Component {
   constructor(props) {
@@ -18,15 +19,28 @@ class UpdateForm extends Component {
   }
 
   handleChange(e) {
-    this.setState ({title: e.target.title,
-                    year: e.target.year,
-                    director: e.target.director,
-                    photo_url: e.target.photo_url})
+    // this.setState ({title: e.target.title,
+    //                 year: e.target.year,
+    //                 director: e.target.director,
+    //                 photo_url: e.target.photo_url})
+    this.setState({
+      movie:{
+        ...this.state.movie,
+        [e.target.name]:e.target.value
+      }
+    }, ()=>console.log(this.state))
   }
+
 
   handleSubmit(e) {
     alert('Movie was updated');
     e.preventDefault();
+    axios.post("/movie", {
+      title: this.state.movie.title,
+      year: this.state.movie.year,
+      director: this.state.movie.director,
+      photo_url: this.state.movie.photo_url
+    })
   }
 
   render() {
@@ -34,19 +48,19 @@ class UpdateForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Title:
-          <input type="text" value={this.state.title} onChange={this.handleChange} />
+          <input name='title' type="text" value={this.state.title} onChange={this.handleChange} />
         </label>
         <label>
           Year:
-          <input type="text" value={this.state.year} onChange={this.handleChange} />
+          <input name='year' type="text" value={this.state.year} onChange={this.handleChange} />
         </label>
         <label>
           Director:
-          <input type="text" value={this.state.director} onChange={this.handleChange} />
+          <input name='director' type="text" value={this.state.director} onChange={this.handleChange} />
         </label>
         <label>
           Photo:
-          <input type="text" value={this.state.photo_url} onChange={this.handleChange} />
+          <input name='photo' type="text" value={this.state.photo_url} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>

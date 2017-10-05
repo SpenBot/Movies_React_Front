@@ -34,7 +34,12 @@ class CreateForm extends Component {
   handleSubmit(e) {
     alert('Movie was submitted');
     e.preventDefault();
-    axios.post("/movies", this.state)
+    axios.post("/movies", {
+      title: this.state.movie.title,
+      year: this.state.movie.year,
+      director: this.state.movie.director,
+      photo_url: this.state.movie.photo_url
+    })
   }
 
   render() {
