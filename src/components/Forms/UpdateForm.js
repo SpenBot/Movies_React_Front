@@ -22,7 +22,7 @@ class UpdateForm extends Component {
   }
 
   handleSubmit(e) {
-    alert('Movie was updated': + this.state);
+    alert('Movie was updated');
     e.preventDefault();
   }
 

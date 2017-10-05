@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
