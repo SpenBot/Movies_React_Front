@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom'
 import axios from 'axios'
 import Movies from '../Movies/Movies.js'
-import CreateForm from './CreateForm'
-import UpdateForm from './UpdateForm'
+import CreateForm from '../Forms/CreateForm'
+import UpdateForm from '../Forms/UpdateForm'
 
 import './App.css'
 
@@ -29,7 +29,12 @@ class App extends Component {
               <Switch>
 
                 <Route path="/movies" render={(props) => {
-                    return ( <Movies /> )
+                    return (
+                      <div>
+                        <Movies />
+                        <CreateForm />
+                      </div>
+                     )
                   }}
                 />
 
